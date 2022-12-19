@@ -1,13 +1,17 @@
 @extends('layaut.app')
 @section('page-title', 'home')
 @section('content')
-{{-- @foreach ($comics as $comic)
-<li>{{$comic['title']}}</li> --}}
 
 <div class="d-flex container comics-cards">
-    {{-- @foreach ($comics as $comic)
+    <ul>
+        @forelse ($movies as $key=>$movie)
 
-    @endforeach --}}
+        <li>{{$movie->title}}--{{$key}}</li>
+
+        @empty
+        <li>no risultati</li>
+        @endforelse
+    </ul>
 </div>
 
 @endsection
